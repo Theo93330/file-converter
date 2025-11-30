@@ -1,3 +1,5 @@
+numpy
+pdfminer.six
 Flask==2.3.2
 python-dotenv==1.0.0
 pandas==2.2.2
