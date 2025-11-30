@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Convertisseur / Nettoyeur — Demo</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <main class="container">
+      <h1>Convertisseur / Nettoyeur de fichiers</h1>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="flashes">
+            {% for m in messages %}
+              <li>{{ m }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+
+      <form action="/process" method="post" enctype="multipart/form-data">
+        <label>Fichier : <input type="file" name="file" required></label>
+        <label>Action :
+          <select name="action">
+            <option value="extract_text">Extraire le texte (PDF)</option>
+            <option value="pdf_to_docx">PDF → DOCX (PDF)</option>
+            <option value="csv_to_xlsx">CSV → XLSX</option>
+            <option value="clean_csv">Nettoyer table (CSV/XLSX)</option>
+          </select>
+        </label>
+        <p>Si vous voulez simuler le paiement (pour tester premium), cochez :</p>
+        <label><input type="checkbox" name="paid" value="true"> Mode payé (test)</label>
+        <button type="submit">Traiter</button>
+      </form>
+
+      <section class="pricing">
+        <h2>Tarifs (exemple)</h2>
+        <p>Usage gratuit <strong>limité</strong> — Pour des transformations longues ou premium, paiement via Stripe.</p>
+      </section>
+
+      <footer>
+        <p>Projet de démonstration — Théo</p>
+      </footer>
+    </main>
+  </body>
+</html>

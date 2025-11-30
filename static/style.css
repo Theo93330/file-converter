@@ -1,0 +1,5 @@
+body { font-family: system-ui, Arial, sans-serif; background: #f6f8fa; color: #111; }
+.container { max-width: 760px; margin: 2rem auto; padding: 1.5rem; background: #fff; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+label { display:block; margin: .6rem 0; }
+button { padding: .6rem 1rem; border-radius: 8px; border: none; cursor: pointer; }
+.flashes { color: #b00020; }
