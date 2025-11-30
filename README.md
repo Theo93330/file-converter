@@ -25,3 +25,4 @@ Projet Flask minimal prêt à déployer.
 ## Notes
 - Améliorer la sécurité avant usage public (validation, tailles, authentification, quotas)
 - Pour conversion lourde, envisager Celery/RQ + Redis
+# convertisseur de fichiers
